@@ -15,7 +15,7 @@
 <body class="font-poppins bg-[#1e1e1e] min-h-screen">
   <main class="bg-[url('./images/background.png')] min-h-screen bg-no-repeat bg-center bg-contain max-w-screen">
     <!-- home section -->
-    <section class="flex justify-center items-center h-screen text-white hidden">
+    <section class="flex justify-center items-center h-screen text-white">
       <div class="text-center space-y-12">
         <h1 class="text-4xl md:text-6xl lg:text-9xl font-anton uppercase">ALPHABET CLASH</h1>
         <p class="text-2xl font-medium">Unleash Your Keyboard Kung Fu : Press “Enter” to Play</p>
@@ -23,10 +23,12 @@
       </div>
     </section>
     <!-- playground section -->
-    <section class="flex justify-center items-center h-screen">
+    <section class="flex justify-center items-center h-screen hidden">
       <div class="w-3/4 space-y-6">
-        <div id="display" class=" flex justify-center items-center h-80 mx-auto relative bg-[#ffffffb3] backdrop-blur-xl border-[#010313cc] border-[20px] rounded-2xl">
-          <p class="bg-[#2F2941] text-white absolute top-0 left-1/2 -translate-x-1/2 px-6 pb-2 rounded-b-xl">Don't watch keyboard while playing...</p>
+        <div id="display"
+          class=" flex justify-center items-center h-80 mx-auto relative bg-[#ffffffb3] backdrop-blur-xl border-[#010313cc] border-[20px] rounded-2xl">
+          <p class="bg-[#2F2941] text-white absolute top-0 left-1/2 -translate-x-1/2 px-6 pb-2 rounded-b-xl">Don't watch
+            keyboard while playing...</p>
           <span class="text-8xl font-semibold text-[#010313]">Y</span>
         </div>
         <div id="keyboard" class="text-2xl">
@@ -41,7 +43,7 @@
             <kbd class="kbd">i</kbd>
             <kbd class="kbd">o</kbd>
             <kbd class="kbd">p</kbd>
-          </div> 
+          </div>
           <div class="flex justify-center gap-1 my-1 w-full">
             <kbd class="kbd">a</kbd>
             <kbd class="kbd">s</kbd>
@@ -52,7 +54,7 @@
             <kbd class="kbd">j</kbd>
             <kbd class="kbd">k</kbd>
             <kbd class="kbd">l</kbd>
-          </div> 
+          </div>
           <div class="flex justify-center gap-1 my-1 w-full">
             <kbd class="kbd">z</kbd>
             <kbd class="kbd">x</kbd>
@@ -76,6 +78,15 @@
             <span>1</span>
           </button>
         </div>
+      </div>
+    </section>
+    <!-- score section -->
+    <section class="flex justify-center items-center h-screen hidden">
+      <div
+        class="text-white text-center space-y-4 border border-[#ffffff33] rounded-2xl bg-gradient-to-r from-[#ffffff8f] to-[#98979700] p-6">
+        <h2 class="text-5xl font-medium">Score : <span>14</span></h2>
+        <button class="btn text-xl font-semibold px-6 py-3 h-auto">Play Again</button>
+        <p class="text-lg font-medium">Practice will make you Pro</p>
       </div>
     </section>
   </main>
