@@ -12,3 +12,7 @@
 .font-inter {
   font-family: "Inter", sans-serif;
 }
+
+.active-kbd {
+  background-color: #FFA500;
+}

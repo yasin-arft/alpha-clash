@@ -25,7 +25,10 @@
     <!-- playground section -->
     <section class="flex justify-center items-center h-screen">
       <div class="w-3/4 space-y-6">
-        <div id="display" class="h-80 mx-auto bg-[#ffffffb3] backdrop-blur-xl border-[#010313cc] border-[20px] rounded-2xl"></div>
+        <div id="display" class=" flex justify-center items-center h-80 mx-auto relative bg-[#ffffffb3] backdrop-blur-xl border-[#010313cc] border-[20px] rounded-2xl">
+          <p class="bg-[#2F2941] text-white absolute top-0 left-1/2 -translate-x-1/2 px-6 pb-2 rounded-b-xl">Don't watch keyboard while playing...</p>
+          <span class="text-8xl font-semibold text-[#010313]">Y</span>
+        </div>
         <div id="keyboard" class="text-2xl">
           <div class="flex justify-center gap-1 my-1 w-full">
             <kbd class="kbd">q</kbd>
@@ -33,7 +36,7 @@
             <kbd class="kbd">e</kbd>
             <kbd class="kbd">r</kbd>
             <kbd class="kbd">t</kbd>
-            <kbd class="kbd">y</kbd>
+            <kbd class="kbd active-kbd">y</kbd>
             <kbd class="kbd">u</kbd>
             <kbd class="kbd">i</kbd>
             <kbd class="kbd">o</kbd>
