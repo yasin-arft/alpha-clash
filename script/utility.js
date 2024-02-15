@@ -8,6 +8,7 @@ function removeClassById(elementId, existingClass) {
   document.getElementById(elementId).classList.remove(existingClass);
 }
 
+// generate a random number and return an alphabet for the array
 function generateARandomAlphabet() {
   const alphabets = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
   const randomAlphabetsIndex = Math.round(Math.random() * 25);
