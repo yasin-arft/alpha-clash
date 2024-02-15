@@ -1,7 +1,3 @@
-// global variables
-const lifeCount = document.getElementById('life-count');
-const scoreCount = document.getElementById('score-count');
-
 // onload handler
 window.onload = function () {
   addClassById('playground-screen', 'hidden');
@@ -22,6 +18,13 @@ document.addEventListener('keyup', handleKeyboardKeyUp);
 function handleKeyboardKeyUp(event) {
   const pressedKey = event.key;
   const expectedKey = document.getElementById('current-alphabet').innerText.toLowerCase();
+
+  // end game by pressing 'Esc'
+  if (pressedKey === 'Escape') {
+    gameOver();
+  }
+
+  // check player key press
   if (pressedKey === expectedKey) {
     // increase score
     removeClassById(expectedKey, 'active-kbd');
@@ -34,6 +37,7 @@ function handleKeyboardKeyUp(event) {
     const currentLife = getInnerNumberById('life-count');
     const updatedLife = currentLife - 1;
     setInnerTextById('life-count', updatedLife);
+    
     // game over
     if (updatedLife === 0) {
       gameOver();
@@ -50,8 +54,8 @@ function continueGame() {
 
 // set defaults values on playground
 function setDefaults() {
-  lifeCount.innerText = 5;
-  scoreCount.innerText = 0;
+  setInnerTextById('life-count', 5);
+  setInnerTextById('score-count', 0);
 }
 
 // game over function
