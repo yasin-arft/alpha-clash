@@ -48,7 +48,7 @@ function handleKeyboardKeyUp(event) {
 // continue playing
 function continueGame() {
   const alphabet = generateARandomAlphabet();
-  document.getElementById('current-alphabet').innerText = alphabet.toUpperCase();
+  setInnerTextById('current-alphabet', alphabet);
   addClassById(alphabet, 'active-kbd');
 }
 
