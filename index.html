@@ -15,67 +15,67 @@
 <body class="font-poppins bg-[#1e1e1e] min-h-screen">
   <main class="bg-[url('./images/background.png')] min-h-screen bg-no-repeat bg-center bg-contain max-w-screen">
     <!-- home section -->
-    <section class="flex justify-center items-center h-screen text-white">
+    <section id="home-screen" class="flex justify-center items-center h-screen text-white">
       <div class="text-center space-y-12">
         <h1 class="text-4xl md:text-6xl lg:text-9xl font-anton uppercase">ALPHABET CLASH</h1>
         <p class="text-2xl font-medium">Unleash Your Keyboard Kung Fu : Press “Enter” to Play</p>
-        <button class="btn text-2xl font-semibold px-8 py-5 h-auto">Play Now</button>
+        <button onclick="play()" class="btn text-2xl font-semibold px-8 py-5 h-auto">Play Now</button>
       </div>
     </section>
     <!-- playground section -->
-    <section class="flex justify-center items-center h-screen hidden">
+    <section id="playground-screen" class="flex justify-center items-center h-screen hidden">
       <div class="w-3/4 space-y-6">
         <div id="display"
           class=" flex justify-center items-center h-80 mx-auto relative bg-[#ffffffb3] backdrop-blur-xl border-[#010313cc] border-[20px] rounded-2xl">
           <p class="bg-[#2F2941] text-white absolute top-0 left-1/2 -translate-x-1/2 px-6 pb-2 rounded-b-xl">Don't watch
             keyboard while playing...</p>
-          <span class="text-8xl font-semibold text-[#010313]">Y</span>
+          <span id="current-alphabet" class="text-8xl font-semibold text-[#010313]">Y</span>
         </div>
         <div id="keyboard" class="text-2xl">
           <div class="flex justify-center gap-1 my-1 w-full">
-            <kbd class="kbd">q</kbd>
-            <kbd class="kbd">w</kbd>
-            <kbd class="kbd">e</kbd>
-            <kbd class="kbd">r</kbd>
-            <kbd class="kbd">t</kbd>
-            <kbd class="kbd active-kbd">y</kbd>
-            <kbd class="kbd">u</kbd>
-            <kbd class="kbd">i</kbd>
-            <kbd class="kbd">o</kbd>
-            <kbd class="kbd">p</kbd>
+            <kbd id="w" class="kbd">w</kbd>
+            <kbd id="q" class="kbd">q</kbd>
+            <kbd id="e" class="kbd">e</kbd>
+            <kbd id="r" class="kbd">r</kbd>
+            <kbd id="t" class="kbd">t</kbd>
+            <kbd id="y" class="kbd">y</kbd>
+            <kbd id="u" class="kbd">u</kbd>
+            <kbd id="i" class="kbd">i</kbd>
+            <kbd id="o" class="kbd">o</kbd>
+            <kbd id="p" class="kbd">p</kbd>
           </div>
           <div class="flex justify-center gap-1 my-1 w-full">
-            <kbd class="kbd">a</kbd>
-            <kbd class="kbd">s</kbd>
-            <kbd class="kbd">d</kbd>
-            <kbd class="kbd">f</kbd>
-            <kbd class="kbd">g</kbd>
-            <kbd class="kbd">h</kbd>
-            <kbd class="kbd">j</kbd>
-            <kbd class="kbd">k</kbd>
-            <kbd class="kbd">l</kbd>
+            <kbd id="a" class="kbd">a</kbd>
+            <kbd id="s" class="kbd">s</kbd>
+            <kbd id="d" class="kbd">d</kbd>
+            <kbd id="f" class="kbd">f</kbd>
+            <kbd id="g" class="kbd">g</kbd>
+            <kbd id="h" class="kbd">h</kbd>
+            <kbd id="j" class="kbd">j</kbd>
+            <kbd id="k" class="kbd">k</kbd>
+            <kbd id="l" class="kbd">l</kbd>
           </div>
           <div class="flex justify-center gap-1 my-1 w-full">
-            <kbd class="kbd">z</kbd>
-            <kbd class="kbd">x</kbd>
-            <kbd class="kbd">c</kbd>
-            <kbd class="kbd">v</kbd>
-            <kbd class="kbd">b</kbd>
-            <kbd class="kbd">n</kbd>
-            <kbd class="kbd">m</kbd>
-            <kbd class="kbd">/</kbd>
+            <kbd id="z" class="kbd">z</kbd>
+            <kbd id="x" class="kbd">x</kbd>
+            <kbd id="c" class="kbd">c</kbd>
+            <kbd id="v" class="kbd">v</kbd>
+            <kbd id="b" class="kbd">b</kbd>
+            <kbd id="n" class="kbd">n</kbd>
+            <kbd id="m" class="kbd">m</kbd>
+            <kbd id="/" class="kbd">/</kbd>
           </div>
         </div>
         <div id="indicators" class="flex justify-between">
           <button class="btn bg-[#894189] text-white border-none rounded-full px-8 font-inter">
             Life
             <img src="./images/life.svg" alt="life">
-            <span>1</span>
+            <span id="life-count">1</span>
           </button>
           <button class="btn bg-[#360490] text-white border-none rounded-full px-8 font-inter">
             Score
             <img src="./images/score.svg" alt="score">
-            <span>1</span>
+            <span id="score-count">1</span>
           </button>
         </div>
       </div>
@@ -90,9 +90,8 @@
       </div>
     </section>
   </main>
-
-
   <!-- scripts -->
+  <script src="script/utility.js"></script>
   <script src="script/main.js"></script>
 </body>
 
