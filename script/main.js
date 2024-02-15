@@ -3,15 +3,15 @@ const lifeCount = document.getElementById('life-count');
 const scoreCount = document.getElementById('score-count');
 
 // onload handler
-window.onload = function() {
+window.onload = function () {
   addClassById('playground-screen', 'hidden');
-  addClassById('final-score', 'hidden');
+  addClassById('score-screen', 'hidden');
 }
 
 // to enter the playground
 function play() {
   addClassById('home-screen', 'hidden');
-  addClassById('final-score', 'hidden');
+  addClassById('score-screen', 'hidden');
   removeClassById('playground-screen', 'hidden');
   continueGame();
   setDefaults();
@@ -26,18 +26,17 @@ function handleKeyboardKeyUp(event) {
     // increase score
     removeClassById(expectedKey, 'active-kbd');
     continueGame();
-    const currentScore = scoreCount.innerText;
-    const updatedScore = parseInt(currentScore) + 1
-    scoreCount.innerText = updatedScore;
+    const currentScore = getInnerNumberById('score-count');
+    const updatedScore = currentScore + 1;
+    setInnerTextById('score-count', updatedScore);
   } else {
     // decrease life
-    const currentLife = lifeCount.innerText;
-    const updatedLife = parseInt(currentLife) - 1
-    lifeCount.innerText = updatedLife;
+    const currentLife = getInnerNumberById('life-count');
+    const updatedLife = currentLife - 1;
+    setInnerTextById('life-count', updatedLife);
     // game over
     if (updatedLife === 0) {
-      addClassById('playground-screen', 'hidden');
-      removeClassById('final-score', 'hidden');
+      gameOver();
     }
   }
 }
@@ -53,4 +52,14 @@ function continueGame() {
 function setDefaults() {
   lifeCount.innerText = 5;
   scoreCount.innerText = 0;
+}
+
+// game over function
+function gameOver() {
+  const finalScore = getInnerNumberById('score-count');
+  const currentAlphabet = document.getElementById('current-alphabet').innerText.toLowerCase();
+  addClassById('playground-screen', 'hidden');
+  removeClassById('score-screen', 'hidden');
+  removeClassById(currentAlphabet, 'active-kbd');
+  setInnerTextById('final-score', finalScore);
 }
