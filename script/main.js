@@ -1,3 +1,6 @@
+// global variables
+let isGameOn = false;
+
 // onload handler
 window.onload = function () {
   addClassById('playground-screen', 'hidden');
@@ -11,14 +14,20 @@ function play() {
   removeClassById('playground-screen', 'hidden');
   continueGame();
   setDefaults();
+  isGameOn = true;
 }
 
 // continue game based on keyup
 document.addEventListener('keyup', handleKeyboardKeyUp);
+
 function handleKeyboardKeyUp(event) {
+  if (!isGameOn) {
+    return
+  }
+  
   const pressedKey = event.key;
   const expectedKey = document.getElementById('current-alphabet').innerText.toLowerCase();
-
+  
   // end game by pressing 'Esc'
   if (pressedKey === 'Escape') {
     gameOver();
@@ -66,4 +75,5 @@ function gameOver() {
   removeClassById('score-screen', 'hidden');
   removeClassById(currentAlphabet, 'active-kbd');
   setInnerTextById('final-score', finalScore);
+  isGameOn = false;
 }
