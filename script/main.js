@@ -1,5 +1,6 @@
 // global variables
 let isGameOn = false;
+const display = document.getElementById('display');
 
 // onload handler
 window.onload = function () {
@@ -24,10 +25,10 @@ function handleKeyboardKeyUp(event) {
   if (!isGameOn) {
     return
   }
-  
+
   const pressedKey = event.key;
   const expectedKey = document.getElementById('current-alphabet').innerText.toLowerCase();
-  
+
   // end game by pressing 'Esc'
   if (pressedKey === 'Escape') {
     gameOver();
@@ -45,8 +46,11 @@ function handleKeyboardKeyUp(event) {
     // decrease life
     const currentLife = getInnerNumberById('life-count');
     const updatedLife = currentLife - 1;
+    const updatedLifePercentage = updatedLife / 5 * 100;
     setInnerTextById('life-count', updatedLife);
-    
+
+    display.style.background = `linear-gradient(#ffffffb3 ${updatedLifePercentage}%, red)`;
+
     // game over
     if (updatedLife === 0) {
       gameOver();
@@ -76,4 +80,5 @@ function gameOver() {
   removeClassById(currentAlphabet, 'active-kbd');
   setInnerTextById('final-score', finalScore);
   isGameOn = false;
+  display.style.background = `linear-gradient(#ffffffb3 100%, red)`;
 }
